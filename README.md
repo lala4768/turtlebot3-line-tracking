@@ -1,4 +1,4 @@
-# turtlebot3-line-tracking
+# 차선 주행 및 아르코마커 인식
 디지털 트윈 기반 서비스 로봇 운영 시스템 구성(real world with waffle)
 
 <br>
@@ -14,16 +14,15 @@
 
 * **주제**
   
-   휴게소 자율 주차 시스템 시뮬레이션
+   차선 주행 및 아르코마커 인식 
 * **개발 배경**
 
-  * 명절이나 연휴시 휴게소 주차에 어려움이 많음
-  * 주차 공간이 협소할 경우 사고 위험이 높음
+  * 시뮬레이션을 real world로 옮겨와 동일한 task 수행을 가능케 하고자 했음
+  * 이번 프로젝트에서 배운 aruco marker 인식 기능을 추가해 보다 다양한 역할을 수행할 수 있도록 하고자 했음
 * **목표**
 
-  * Lane Detection 및 Autorace 기술의 결합
-  * 시뮬레이션 상에서 TurtleBot3의 자동주차 시스템 구현
-
+  * 시뮬레이션 코드를 기반으로 real world에서 차선 탐지 후 주행 + 횡단보도 인식 기능 구현
+  * Aruco marker를 인식하면 turtlebot3의 manipulator가 이를 장애물로 판단해 도로 외곽으로 옮기는 기능 추가 구현
 <br>
 
 # Flow Chart
@@ -35,9 +34,9 @@
 ## 사용 기술 및 장비
 
 * **언어 및 환경**: Python 3.10, Ubuntu 22.04, ROS2 Humble
-* **도구**: Colab, VSCode
-* **로봇 하드웨어**: X
-* **로봇 소프트웨어**: Gazebo
+* **도구**: VSCode
+* **로봇 하드웨어**: TurtleBot3, OpenMANIPULATOR
+* **로봇 소프트웨어**: rviz
 
 <br>
 
