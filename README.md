@@ -22,7 +22,7 @@
 * **목표**
 
   * 시뮬레이션 코드를 기반으로 real world에서 차선 탐지 후 주행 + 횡단보도 인식 기능 구현
-  * Aruco marker를 인식하면 turtlebot3의 manipulator가 이를 장애물로 판단해 도로 외곽으로 옮기는 기능 추가 구현
+  * Aruco marker를 인식하면 manipulator가 이를 장애물로 판단해 도로 외곽으로 옮기는 기능 추가 구현
 <br>
 
 # Flow Chart
