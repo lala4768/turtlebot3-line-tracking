@@ -51,7 +51,7 @@
 * 추출된 픽셀을 기반으로 곡선을 추정하고 시각화
 
 
-2. **장애물 회피**
+2. **횡단보도 감지시 일시 정지**
 
 * 차선 추종과 회피 모드 명령을 모두 퍼블리시
 * 회피 모드가 아닐 때만, 화면 중앙과의 오차 바탕으로 선형-각속도를 계산해 퍼블리시
@@ -59,7 +59,7 @@
 * 회피 모드일 때만, 들어온 메시지를 즉각 퍼블리시해 장애물 회피 동작 수행
 
 
-3. **신호 감지**
+3. **Aruco Marker 검출**
 
 ![traffic_light-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/79269e7d-15c2-4f49-83ff-a70b177c3a50)
 
@@ -70,7 +70,7 @@
 * 제어 노드 실행해 실제 로봇 동작 제어
 
 
-4. **표지판 감지시 주차/복귀**
+4. ** Pick and Place**
 
 ![parking-ezgif com-video-to-gif-converter (1)](https://github.com/user-attachments/assets/0ec9c6ab-bcdc-4db8-98d9-c6089fbc0fa5)
 
@@ -85,7 +85,8 @@
 
 ## 프로젝트 성과
 
-* Gazebo를 활용해 자동 주차 시스템을 시뮬레이션 환경에서 구현
+* Simulation 환경에서 개발한 코드를 기반으로 Real World에서 주어진 Task 수행 완료
+* TurtleBot3와 Manipulator를 활용한 차선 주행 및 Pick and Place 연계
 * ROS2 기반 통신 구조 설계 및 노드 연동 경험
 
 ![simulation-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/8ad4640b-ad9b-459d-8325-705885b77f47)
