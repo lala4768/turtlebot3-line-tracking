@@ -86,7 +86,7 @@
 ## 프로젝트 성과
 
 * Simulation 환경에서 개발한 코드를 기반으로 Real World에서 주어진 Task 수행 완료
-* TurtleBot3와 Manipulator를 활용한 차선 주행 및 Pick and Place 연계
+* TurtleBot3와 Manipulator를 활용한 차선 주행 및 Pick and Place Task를 서로 연계
 * ROS2 기반 통신 구조 설계 및 노드 연동 경험
 
 ![simulation-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/8ad4640b-ad9b-459d-8325-705885b77f47)
