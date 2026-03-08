@@ -55,24 +55,20 @@
 
 2. **Aruco Marker 검출**
 
-![traffic_light-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/79269e7d-15c2-4f49-83ff-a70b177c3a50)
+<img width="714" height="812" alt="image" src="https://github.com/user-attachments/assets/f1482a00-1161-4ffa-97a5-54466f4f0192" />
 
-* 신호 감지 노드를 실행하고, 색상 인식에 필요한 HSV 파라미터 설정
-* 카메라로부터 실시간 이미지 구독하고 OpenCV로 빨간불/노란불/초록불 감지
-* 신호동의 상태가 담긴 메시지를 토픽을 통해 전달
-* 감지된 신호등의 상태에 따라 로봇의 주행 속도나 정지 여부 결정
-* 제어 노드 실행해 실제 로봇 동작 제어
 
+* Camera : 영상 캡처 후 /camera/image_raw/compreese 퍼블리시
+* Aruco_detect : 영상 구독 -> Aruco 마커 검출 -> detected_markers 퍼블리시
+* Lane_detect : detected_markers 구독 -> detect하면 기존 lane_detect stop -> /cmd_vel 퍼블리시
 
 3. ** Pick and Place**
 
-![parking-ezgif com-video-to-gif-converter (1)](https://github.com/user-attachments/assets/0ec9c6ab-bcdc-4db8-98d9-c6089fbc0fa5)
+<img width="714" height="812" alt="image" src="https://github.com/user-attachments/assets/f1482a00-1161-4ffa-97a5-54466f4f0192" />
 
-
-* 정지 실행 -> 빈 메시지를 퍼블리시해 로봇의 선속도와 회전속도를 0으로 만들어 즉시 정지
-* 로그 기록 -> "Stopped after delay" 로그 남겨 정지 지점 확인
-* 타이머 정리 -> 이전에 설정된 지연 정지용 타이머를 더이상 호출되지 않게 하고, 초기화해 중복 실행 방지
-* 
+* Turtlebot_arm_controller : 서비스 발행
+* Pick_and_place : /cmd_vel 등 트리거로 moveit_control 서비스 호출 및 요청에 따라 로봇암/그리퍼 동작 실행
+ 
 
 <br>
 
