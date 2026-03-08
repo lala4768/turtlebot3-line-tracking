@@ -55,7 +55,7 @@
 
 2. **Aruco Marker 검출**
 
-<img width="714" height="812" alt="image" src="https://github.com/user-attachments/assets/f1482a00-1161-4ffa-97a5-54466f4f0192" />
+<img width="400" height="500" alt="image" src="https://github.com/user-attachments/assets/f1482a00-1161-4ffa-97a5-54466f4f0192" />
 
 
 * Camera : 영상 캡처 후 /camera/image_raw/compreese 퍼블리시
