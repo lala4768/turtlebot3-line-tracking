@@ -43,7 +43,7 @@
 
 1. **차선 감지**
 
-![lane_trace-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/317a4965-f53e-4345-9b07-f067c66c0e61)
+https://s3.ezgif.com/tmp/ezgif-3ce0aa9fb56206ce.gif
 
 * 파라미터 선언 & 동적 로딩
 * 상태 변수 초기화
@@ -77,4 +77,4 @@
 * TurtleBot3와 Manipulator를 활용한 차선 주행 및 Pick and Place Task를 서로 연계
 * ROS2 기반 통신 구조 설계 및 노드 연동 경험
 
-![simulation-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/8ad4640b-ad9b-459d-8325-705885b77f47)
+![ezgif-3c00cca303b7a9d4](https://github.com/user-attachments/assets/68f3d7d8-2c07-4f00-ac44-eb8dd7294a89)
