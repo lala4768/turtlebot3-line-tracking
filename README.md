@@ -1,14 +1,18 @@
 # 차선 주행 및 아르코마커 인식
 디지털 트윈 기반 서비스 로봇 운영 시스템 구성(real world with waffle)
 
+
 <br>
+
 
 ### Contributors
 |정서윤|홍진규|나승원|이동기|
 |----|----|----|----|
 |**[???](https://github.com/)**|**[???](https://github.com/)**|**[lala4768](https://github.com/lala4768)**|**[???](https://github.com/)**|
 
+
 <br>
+
 
 ## 프로젝트 개요
 
@@ -23,12 +27,17 @@
 
   * 시뮬레이션 코드를 기반으로 real world에서 차선 탐지 후 주행 + 횡단보도 인식 기능 구현
   * Aruco marker를 인식하면 manipulator가 이를 장애물로 판단해 도로 외곽으로 옮기는 기능 추가 구현
+
+
 <br>
 
-# Flow Chart
+
+## Flow Chart
 `차선 감지 및 주행` → `Aruco Marker 검출시 정지` → `Pick and Place`
 
+
 <br>
+
 
 ## 사용 기술 및 장비
 
@@ -37,13 +46,15 @@
 * **로봇 하드웨어**: TurtleBot3, OpenMANIPULATOR
 * **로봇 소프트웨어**: rviz
 
+
 <br>
+
 
 ## 주요 기능
 
 1. **차선 감지**
 
-https://s3.ezgif.com/tmp/ezgif-3ce0aa9fb56206ce.gif
+![rqt_racing](https://github.com/user-attachments/assets/b9b9f5aa-8ca3-4579-aab6-7173e55b25db)
 
 * 파라미터 선언 & 동적 로딩
 * 상태 변수 초기화
@@ -67,9 +78,10 @@ https://s3.ezgif.com/tmp/ezgif-3ce0aa9fb56206ce.gif
 
 * Turtlebot_arm_controller : 서비스 발행
 * Pick_and_place : /cmd_vel 등 트리거로 moveit_control 서비스 호출 및 요청에 따라 로봇암/그리퍼 동작 실행
- 
+
 
 <br>
+
 
 ## 프로젝트 성과
 
