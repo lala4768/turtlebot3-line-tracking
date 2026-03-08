@@ -54,9 +54,8 @@
 * 검사한 마커가 ID와 일치하면 플래그 세팅해 이미지 콜백 함수에서 플래그 확인 후 로봇 정지 및 plck & place 트리거 로직 실행
 
 2. **Aruco Marker 검출**
-
-<img width="400" height="500" alt="image" src="https://github.com/user-attachments/assets/f1482a00-1161-4ffa-97a5-54466f4f0192" />
-
+   
+<img width="400" height="500" alt="aruco_marker_flow_chart" src="https://github.com/user-attachments/assets/4105f656-1ea2-4b1e-b7d0-9fb8990e679f" />
 
 * Camera : 영상 캡처 후 /camera/image_raw/compreese 퍼블리시
 * Aruco_detect : 영상 구독 -> Aruco 마커 검출 -> detected_markers 퍼블리시
