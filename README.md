@@ -63,7 +63,7 @@
 
 3. ** Pick and Place**
 
-<img width="714" height="812" alt="image" src="https://github.com/user-attachments/assets/f1482a00-1161-4ffa-97a5-54466f4f0192" />
+<img width="400" height="500" alt="aruco_marker_robot_arm" src="https://github.com/user-attachments/assets/c356a005-926f-43ae-88d9-f738ae742a82" />
 
 * Turtlebot_arm_controller : 서비스 발행
 * Pick_and_place : /cmd_vel 등 트리거로 moveit_control 서비스 호출 및 요청에 따라 로봇암/그리퍼 동작 실행
