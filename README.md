@@ -54,7 +54,7 @@
 
 1. **차선 감지**
 
-![rqt_racing](https://github.com/user-attachments/assets/b9b9f5aa-8ca3-4579-aab6-7173e55b25db)
+![rqt_racing](https://github.com/user-attachments/assets/3f74cbfd-2d3a-4fad-a984-f7c80fc370b3)
 
 * 파라미터 선언 & 동적 로딩
 * 상태 변수 초기화
