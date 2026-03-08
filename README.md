@@ -17,7 +17,7 @@
    차선 주행 및 아르코마커 인식 
 * **개발 배경**
 
-  * 시뮬레이션을 real world로 옮겨와 동일한 task 수행을 가능케 하고자 했음
+  * 시뮬레이션에서 구현된 로봇을 real world로 옮겨와 동일한 task 수행을 가능케 하고자 했음
   * 이번 프로젝트에서 배운 aruco marker 인식 기능을 추가해 보다 다양한 역할을 수행할 수 있도록 하고자 했음
 * **목표**
 
@@ -26,7 +26,7 @@
 <br>
 
 # Flow Chart
-`차선 감지 및 주행` → `횡단보도 인식시 일시 정지`→`Aruco Marker 검출시 정지` → `Pick and Place`
+`차선 감지 및 주행` → `Aruco Marker 검출시 정지` → `Pick and Place`
 
 <br>
 
@@ -45,21 +45,15 @@
 
 ![lane_trace-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/317a4965-f53e-4345-9b07-f067c66c0e61)
 
-* /camera/image_raw 토픽으로 실시간 이미지 입력
-* OpenCV로 BGR 이미지를 HSV로 변환
-* HSV 범위 내 픽셀만 필터링해 차선만 추출
-* 추출된 픽셀을 기반으로 곡선을 추정하고 시각화
+* 파라미터 선언 & 동적 로딩
+* 상태 변수 초기화
+* 토픽-구독-퍼블리셔-타이머 설정
+* PID 파라미터 재정의
+* 콜백 함수를 정의함으로써 최신 이미지와 관절 상태를 지속 업데이트해, 이후 제어 로직이 최신 데이터를 사용할 수 있도록 함 
+* 주행 속도 및 회전 속도 명령을 간단히 보내기 위한 헬퍼 함수 정의
+* 검사한 마커가 ID와 일치하면 플래그 세팅해 이미지 콜백 함수에서 플래그 확인 후 로봇 정지 및 plck & place 트리거 로직 실행
 
-
-2. **횡단보도 감지시 일시 정지**
-
-* 차선 추종과 회피 모드 명령을 모두 퍼블리시
-* 회피 모드가 아닐 때만, 화면 중앙과의 오차 바탕으로 선형-각속도를 계산해 퍼블리시
-* 회피 모드 토픽을 받아 True면 차선 추종 멈추고 회피 모드 전환
-* 회피 모드일 때만, 들어온 메시지를 즉각 퍼블리시해 장애물 회피 동작 수행
-
-
-3. **Aruco Marker 검출**
+2. **Aruco Marker 검출**
 
 ![traffic_light-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/79269e7d-15c2-4f49-83ff-a70b177c3a50)
 
@@ -70,16 +64,15 @@
 * 제어 노드 실행해 실제 로봇 동작 제어
 
 
-4. ** Pick and Place**
+3. ** Pick and Place**
 
 ![parking-ezgif com-video-to-gif-converter (1)](https://github.com/user-attachments/assets/0ec9c6ab-bcdc-4db8-98d9-c6089fbc0fa5)
 
 
-* 주행 중 주차장 표지판 감지시 mux 변환
-* Twist 함수 통해 주차 시작(전진 -> 좌회전 -> 전진)
-* Construction sign 감지시 Twist 통해 주차 동작 실제 실행
-* 주차공간 빠져나간 후 lane 복귀
-* mux 재변환 후 다시 lane 따라 주행
+* 정지 실행 -> 빈 메시지를 퍼블리시해 로봇의 선속도와 회전속도를 0으로 만들어 즉시 정지
+* 로그 기록 -> "Stopped after delay" 로그 남겨 정지 지점 확인
+* 타이머 정리 -> 이전에 설정된 지연 정지용 타이머를 더이상 호출되지 않게 하고, 초기화해 중복 실행 방지
+* 
 
 <br>
 
